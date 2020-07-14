@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="telephone=no" name="format-detection" />
+	<!--<meta name="viewport" content="width=667">-->
+	<title>test rem</title>
+	<style>
+		.box {
+			color: gray;
+		}
+		dl dt {
+			font-size: 1.1rem;
+			font-weight: bold;
+		}
+
+		.top_time {
+			position: absolute;
+			text-align: center;
+			font-size: 14px;
+		}
+		.main {
+			position: absolute;
+			width: 80%;
+			padding: 2% 10%;
+			height: 44%;
+			top: 17%;
+		}
+
+		dl dd {
+			font-size: 1rem;
+		}
+
+		.detail {
+			position: absolute;
+			top: 38%;
+			padding: 0 10%;
+		}
+
+		span {
+			color: #63635e;
+			background-color: #e1e1dd;
+			border: 1px solid gray;
+			margin: 0 4px;
+		}
+
+		@media screen and (min-width:1400px){html,body{font-size:24px}}@media screen and (max-width:1400px){html,body{font-size:22px}}@media screen and (max-width:1024px){html,body{font-size:18px}}@media screen and (max-width:906px){html,body{font-size:16px}}@media screen and (max-width:736px){html,body{font-size:14px}}@media screen and (max-width:640px){html,body{font-size:12px}}@media screen and (max-width:568px) and (max-height:320px){html,body{font-size:11px}}@media screen and (max-width:480px){html,body{font-size:10px}}
+	</style>
+</head>
+<body>
+
+<div class="box">
+	<!--############比较案例1########### -->
+	<!-- <meta name="viewport" content="width=667"> 与设置的@media情况下（缺一不可）会显示差别-->
+	<div class="top_time" style="width: 50%;left: 25%;top: 2%;"><p>活動時間：06月15日-07月29日</p></div>
+	<div class="top_time" style="width: 100%;top: 10%;"><p>活動時間：06月15日-07月29日</p></div>
+
+	<!--############比较案例2############-->
+	<!--两个dt存在的时候显示才是正常的，一个dt时1.1rem的显示比1rem还小-->
+	<div class="main">
+		<div class="questions">
+			<div class="question">
+				<dl>
+					<dt>我是测试文字测试文字</dt>
+					<!--<dt>我是测试文字测试文字</dt>-->
+					<dd>
+						<input type="radio" name="r1choice" id="r1choice1" value="1"/>
+						<label for="r1choice1">测试文字测试文字</label>
+					</dd>
+					<dd>
+						<input type="radio" name="r1choice" id="r1choice2" value="2"/>
+						<label for="r1choice2">测试文字测试文字</label>
+					</dd>
+					<dd>
+						<input type="radio" name="r1choice" id="r1choice3" value="3"/>
+						<label for="r1choice3">测试文字测试文字</label>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="detail">
+	------------------------------------------------------------------------------
+	<h4>上面的测试组在较新的safari下面显示会有差异,具体如下：</h4>
+	<p>
+		① <span>&lt;meta name=&quot;viewport&quot; content=&quot;width=667&quot;&gt;</span>与设置的<span>@media</span>情况下（缺一不可）显示会有差异，如下面的时间，明显上面width属性小的div得字体显示比下面的要小；
+	</p>
+	<p>
+		② 两个dt存在的时候显示是正常的，而只有一个dt时1.1rem的显示比1rem还小
+	</p>
+	<img src="../images/safari.jpg" width="700">
+</div>
+</body>
+</html>
